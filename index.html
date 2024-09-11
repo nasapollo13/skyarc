@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home — SEQTA Learn</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: "Cascadia Code", "Courier New", Courier, monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
+            height: 100vh;
+            text-align: center;
+            transition: opacity 5s; 
+        }
+        body {
+            background-image: url('background.gif');
+            background-size: 200px 200px; 
+            background-repeat: repeat; 
+            background-attachment: fixed;
+            margin: 0; 
+            padding: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em; 
+            outline: none; 
+        }
+
+        a:hover {
+            color: purple;
+        }
+
+        a:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" id="enter-link" tabindex="0">enter?</a>
+
+    <script>
+        function handleNavigation() {
+            document.body.style.opacity = '0'; 
+            setTimeout(function() {
+                window.location.href = 'enter.html'; 
+            }, 1000); 
+        }
+
+        document.getElementById('enter-link').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            handleNavigation(); 
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' && document.activeElement === document.getElementById('enter-link')) {
+                event.preventDefault(); 
+                handleNavigation(); 
+            }
+        });
+
+        document.getElementById('enter-link').focus();
+    </script>
+</body>
+</html>
